@@ -10,7 +10,7 @@ h1{
   grid-template-columns: 1fr 1fr;
   position: relative;
   top: 50px;
-  left: calc(50% - 550px);
+  left: 130px;
 }
 .movies{
   width: 500px;
