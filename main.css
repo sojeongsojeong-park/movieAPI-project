@@ -1,7 +1,7 @@
 h1{
   width: 600px;
   position: relative;
-  top: 30px;
+  top: 40px;
   left: 500px;
 }
 #app{
@@ -48,4 +48,30 @@ p{
   margin:auto;
   padding-bottom: 10px;
   text-align:justify;
+}
+#button{
+  display: flex;
+  width: 1200px;
+  height: 90px;
+  position: relative;
+  top: 40px;
+  left: 100px;
+}
+#genreMain, .button{
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: burlywood;
+  border-radius: 50px;
+  margin: 20px;
+  flex-wrap: nowrap;
+}
+#genreMain{
+  background-color: rgb(233, 167, 81);
+}
+.button:hover{
+  background-color: rgb(44, 25, 1);
+  color: #fff;
+  transition: 0.5s;
 }
