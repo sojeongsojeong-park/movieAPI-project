@@ -36,6 +36,7 @@ fetch("https://yts.mx/api/v2/list_movies.json")
 .then(displaying)
 .then(makingButton)
 
+
 // making button for sorting by genres
 
 function makingButton(data){
@@ -79,5 +80,27 @@ function makingButton(data){
   GenreFifth.className = "button";
   GenreFifth.innerText = uniqGenres[4];
   buttonBar.appendChild(GenreFifth);
-
+  
+  const buttons = document.querySelectorAll(".button");
+  function filtering(){
+    const filtered = data.filter(e => e.genres == this.innerText)
+    console.log(filtered);
+    document.getElementById("app").innerHTML = "";
+    for(let i = 0; i<filtered.length; i++){
+      let html = `<div class="movies">
+      <h2>${filtered[i].title} (${filtered[i].year})</h2>
+      <div class="rating">${filtered[i].rating}/10</div>
+      <img src = "${filtered[i].backgroundImage}"></img>
+      <p>${filtered[i].summary}</p>
+      </div>`
+      document.getElementById("app").innerHTML +=html;
+    }
+  }
+  buttons[0].addEventListener("click", filtering);
+  buttons[1].addEventListener("click", filtering);
+  buttons[2].addEventListener("click", filtering);
+  buttons[3].addEventListener("click", filtering);
+  buttons[4].addEventListener("click", filtering);
+  
 }
+
